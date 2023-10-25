@@ -6,8 +6,8 @@ import random
 rows = 4
 colums = 4
 
-matriz_aleatoria = np.random.rand(rows, colums)
-# matriz_aleatoria = []
+# matriz_aleatoria = np.random.rand(rows, colums)
+matriz_aleatoria = []
 
 # matriz_aleatoria = random.random()
 # matriz_aleatoria = np.random.uniform()
@@ -17,24 +17,24 @@ pilotos = ["Piloto1", "Piloto2", "Piloto3", "Piloto4"]
 #     [55.2, 54.8, 55.0, 55.3],
 #     [54.7, 54.9, 55.2, 54.6],
 #     [55.5, 55.3, 54.0, 55.2],
-#     [54.6, 54.7, 54.8, 54.9]# ]
+#     [54.6, 54.7, 54.8, 54.9] ]
 
 # Calcular el promedio de tiempos para cada piloto y guardarlos en un vector
 promedioT = [sum(matriz_aleatoria) / len(matriz_aleatoria) for matriz_aleatoria in matriz_aleatoria]
 
 
 # Generar valores decimales aleatorios y llenar la matriz
-# for i in range(rows):
-#     fila = []
-#     for j in range(colums):
-#         # Generar un valor decimal aleatorio entre un rango específico
-#         valor_decimal = round(random.uniform(0, 1), 2)  # En este ejemplo, se redondea a 2 decimales
-#         fila.append(valor_decimal)
-#     matriz_aleatoria.append(fila)
+for i in range(rows):
+    fila = []
+    for j in range(colums):
+        # Generar un valor decimal aleatorio entre un rango específico
+        valor_decimal = round(random.uniform(0, 1), 2)  # En este ejemplo, se redondea a 2 decimales
+        fila.append(valor_decimal)
+    matriz_aleatoria.append(fila)
     
-# #Imprime la matriz
-# for fila in matriz_aleatoria:
-#     print(fila)
+#Imprime la matriz
+for fila in matriz_aleatoria:
+    print(fila)
 
 # Función para consultar los tiempos de cada piloto por cada vuelta
 def consultar_tiempos_vuelta(piloto_index):
