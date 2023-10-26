@@ -10,10 +10,12 @@ pilotos = ["Piloto1", "Piloto2", "Piloto3", "Piloto4"]
 for i in range(rows):
     fila = []
     for j in range(columns):
-        valor_decimal = round(random.uniform(0, 1), 2)
+        #Gnera un valor decimal aleatorio entre un rango epecifico
+        valor_decimal = round(random.uniform(0, 1), 2) #Redondea a 2 decimales
         fila.append(valor_decimal)
     matriz_aleatoria.append(fila)
 
+# Imprime la matriz
 for fila in matriz_aleatoria:
     print(fila)
 
