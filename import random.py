@@ -20,7 +20,6 @@ pilotos = ["Piloto1", "Piloto2", "Piloto3", "Piloto4"]
 #     [54.6, 54.7, 54.8, 54.9] ]
 
 # Calcular el promedio de tiempos para cada piloto y guardarlos en un vector
-promedioT = [sum(matriz_aleatoria) / len(matriz_aleatoria) for matriz_aleatoria in matriz_aleatoria]
 
 
 # Generar valores decimales aleatorios y llenar la matriz
@@ -36,6 +35,8 @@ for i in range(rows):
 for fila in matriz_aleatoria:
     print(fila)
 
+promedioT = [sum(matriz_aleatoria) / len(matriz_aleatoria) for matriz_aleatoria in matriz_aleatoria]
+
 # Función para consultar los tiempos de cada piloto por cada vuelta
 def consultar_tiempos_vuelta(piloto_index):
     piloto = pilotos[piloto_index]
@@ -45,7 +46,7 @@ def consultar_tiempos_vuelta(piloto_index):
 
 # Función para mostrar el piloto más rápido en una vuelta específica
 def piloto_mas_rapido_en_vuelta(vuelta):
-    tiempos_vuelta = [matriz_aleatoria[vuelta - 1] for matriz_aleatoria in matriz_aleatoria]
+    tiempos_vuelta = [matriz_aleatoria[vuelta - 1] for i in range(rows)]
     piloto_index = tiempos_vuelta.index(min(tiempos_vuelta))
     return pilotos[piloto_index]
 
@@ -55,9 +56,9 @@ def piloto_con_menor_tiempo_total():
     return pilotos[piloto_index]
 
 # Ejemplos de uso  VUELTAS POR PILOTO
-consultar_tiempos_vuelta(1)  # Consultar los tiempos del primer piloto en cada vuelta
+consultar_tiempos_vuelta(3)  # Consultar los tiempos del primer piloto en cada vuelta
 
-vuelta_mas_rapida = 1 # CONSULTAR LA VUELTA DESEADA
+vuelta_mas_rapida = 3 # CONSULTAR LA VUELTA DESEADA
 
 piloto = piloto_mas_rapido_en_vuelta(vuelta_mas_rapida)
 print(f"El piloto más rápido en la vuelta {vuelta_mas_rapida} es: {piloto}")
