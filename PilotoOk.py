@@ -15,9 +15,9 @@ def calcular_promedios(ClasificacionPole):
 def mostrar_tiempos_por_piloto(ClasificacionPole):
     num_pilotos, num_vueltas = ClasificacionPole.shape
     for i in range(num_pilotos):
-        nombre = input(f"Nombre del piloto {i + 1}: ")
+        nombre = f"Piloto {i + 1}"
         tiempos = ClasificacionPole[i]
-        print(f"Piloto {nombre}: {tiempos}")
+        print(f"{nombre}: {tiempos}")
 
 # Función para encontrar el piloto más rápido en una vuelta específica
 def piloto_mas_rapido_en_vuelta(ClasificacionPole, vuelta):
@@ -29,6 +29,11 @@ def piloto_mas_rapido_en_vuelta(ClasificacionPole, vuelta):
 def mostrar_piloto_con_menor_promedio(PromedioT):
     piloto_menor_promedio = np.argmin(PromedioT)
     return piloto_menor_promedio
+
+# Función para mostrar el promedio de todos los pilotos
+def mostrar_promedio_general(PromedioT):
+    promedio_general = np.mean(PromedioT)
+    print(f"El promedio de todos los pilotos es: {promedio_general:.2f}")
 
 # Menú de opciones
 def menu():
@@ -43,8 +48,9 @@ def menu():
         print("1. Mostrar tiempos por piloto")
         print("2. Encontrar el piloto más rápido en una vuelta")
         print("3. Mostrar el piloto con el menor tiempo promedio")
-        print("4. Mostrar quien quedó en el primer lugar")
-        print("5. Salir")
+        print("4. Mostrar el promedio de todos los pilotos")
+        print("5. Mostrar quien quedó en el primer lugar")
+        print("6. Salir")
 
         opcion = int(input("Seleccione una opción: "))
 
@@ -58,9 +64,11 @@ def menu():
             piloto_menor_promedio = mostrar_piloto_con_menor_promedio(PromedioT)
             print(f"El piloto con el menor tiempo promedio es el Piloto {piloto_menor_promedio + 1}")
         elif opcion == 4:
+            mostrar_promedio_general(PromedioT)
+        elif opcion == 5:
             piloto_pole = mostrar_piloto_con_menor_promedio(PromedioT)
             print(f"El piloto que logra la Pole Position es el Piloto {piloto_pole + 1}")
-        elif opcion == 5:
+        elif opcion == 6:
             break
         else:
             print("Opción no válida. Por favor, seleccione una opción válida.")
